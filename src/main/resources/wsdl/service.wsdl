@@ -75,10 +75,10 @@
 
     <wsdl:service name="MOReceive">
         <wsdl:port name="MOReceiveSoap" binding="tns:MOReceiveSoap">
-            <soap:address location="http://58.187.9.176:8086/soap/MOReceive" />
+            <soap:address location="http://localhost:8086/soap/MOReceive" />
         </wsdl:port>
         <wsdl:port name="MOReceiveSoap12" binding="tns:MOReceiveSoap12">
-            <soap12:address location="http://58.187.9.176:8086/soap/MOReceive" />
+            <soap12:address location="http://localhost:8086/soap/MOReceive" />
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
