@@ -1,0 +1,11 @@
+2021-12-28 02:28:59 INFO  MO-MT:22 - --------------------------
+2021-12-28 02:28:59 INFO  MO-MT:23 - MOId:1111, Telco:[string?], ServiceNum:[string?], Phone:[string?], Syntax:[string?], EncryptedMessage:[string?], Signature:[string?]
+2021-12-28 02:29:10 INFO  MO-MT:22 - --------------------------
+2021-12-28 02:29:10 INFO  MO-MT:23 - MOId:0, Telco:[string?], ServiceNum:[string?], Phone:[string?], Syntax:[string?], EncryptedMessage:[string?], Signature:[string?]
+2021-12-28 02:29:25 INFO  MO-MT:22 - --------------------------
+2021-12-28 02:29:25 INFO  MO-MT:23 - MOId:0, Telco:ewrwer, ServiceNum:[string?], Phone:[string?], Syntax:[string?], EncryptedMessage:[string?], Signature:[string?]
+2021-12-28 02:32:06 INFO  MO-MT:22 - --------------------------
+2021-12-28 02:32:06 INFO  MO-MT:23 - MOId:0, Telco:[string?], ServiceNum:[string?], Phone:[string?], Syntax:[string?], EncryptedMessage:[string?], Signature:[string?]
+2021-12-28 02:32:06 INFO  MO-MT:34 - Invalid input data
+2021-12-28 02:32:23 INFO  MO-MT:22 - --------------------------
+2021-12-28 02:32:23 INFO  MO-MT:23 - MOId:23423, Telco:[string?], ServiceNum:[string?], Phone:[string?], Syntax:[string?], EncryptedMessage:[string?], Signature:[string?]

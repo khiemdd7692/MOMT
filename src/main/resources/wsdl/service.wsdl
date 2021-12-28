@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SMSService"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/">
+
+    <wsdl:types>
+        <xsd:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+            <xsd:element name="MessageRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" maxOccurs="1" name="MOId" type="xsd:int"/>
+                        <xsd:element minOccurs="0" maxOccurs="1" name="Telco" type="xsd:string"/>
+                        <xsd:element minOccurs="0" maxOccurs="1" name="ServiceNum" type="xsd:string"/>
+                        <xsd:element minOccurs="0" maxOccurs="1" name="Phone" type="xsd:string"/>
+                        <xsd:element minOccurs="0" maxOccurs="1" name="Syntax" type="xsd:string"/>
+                        <xsd:element minOccurs="0" maxOccurs="1" name="EncryptedMessage" type="xsd:string"/>
+                        <xsd:element minOccurs="0" maxOccurs="1" name="Signature" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="MessageRequestResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" maxOccurs="1" name="MessageResponseResult" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+
+    <wsdl:message name="doMessageSendSoapIn">
+        <wsdl:part name="parameters" element="tns:MessageRequest" />
+    </wsdl:message>
+
+    <wsdl:message name="doMessageSendSoapOut">
+        <wsdl:part name="parameters" element="tns:MessageRequestResponse" />
+    </wsdl:message>
+
+    <wsdl:portType name="MOReceiveSoap">
+        <wsdl:operation name="messageRequest">
+            <wsdl:input message="tns:doMessageSendSoapIn" />
+            <wsdl:output message="tns:doMessageSendSoapOut" />
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="MOReceiveSoap" type="tns:MOReceiveSoap">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="messageRequest">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="MOReceiveSoap12" type="tns:MOReceiveSoap">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="messageRequest">
+            <soap12:operation soapAction="" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="MOReceive">
+        <wsdl:port name="MOReceiveSoap" binding="tns:MOReceiveSoap">
+            <soap:address location="http://58.187.9.176:8086/soap/MOReceive" />
+        </wsdl:port>
+        <wsdl:port name="MOReceiveSoap12" binding="tns:MOReceiveSoap12">
+            <soap12:address location="http://58.187.9.176:8086/soap/MOReceive" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
